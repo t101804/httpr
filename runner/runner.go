@@ -29,13 +29,15 @@ import (
 	dsl "github.com/projectdiscovery/dsl"
 	"github.com/projectdiscovery/fastdialer/fastdialer"
 	"github.com/projectdiscovery/mapcidr/asn"
-	"github.com/projectdiscovery/stringsutil"
+
+	// "github.com/projectdiscovery/stringsutil"
 	errorutil "github.com/projectdiscovery/utils/errors"
 	osutil "github.com/projectdiscovery/utils/os"
 	"github.com/t101804/httpr/common/customextract"
 	"github.com/t101804/httpr/common/errorpageclassifier"
 	"github.com/t101804/httpr/common/hashes/jarm"
 	"github.com/t101804/httpr/static"
+	stringsutil "github.com/t101804/stringsr"
 
 	"github.com/Mzack9999/gcache"
 	"github.com/logrusorgru/aurora"
@@ -832,7 +834,8 @@ func (r *Runner) RunEnumerationWithID() {
 			if len(r.options.matchContentLength) > 0 && !slice.IntSliceContains(r.options.matchContentLength, resp.ContentLength) {
 				continue
 			}
-			if r.options.OutputMatchTech != "" && !stringsutil.ContainsAny(r.options.OutputMatchTech, resp.Technologies...) {
+
+			if len(r.options.OutputMatchTech) > 0 && !stringsutil.ContainsAnyDoubleArray(r.options.OutputMatchTech...)(resp.Technologies...) {
 				continue
 			}
 

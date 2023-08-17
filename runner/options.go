@@ -166,7 +166,7 @@ type Options struct {
 	OutputFilterString        string
 	OutputMatchString         string
 	OutputFilterRegex         string
-	OutputMatchTech           string
+	OutputMatchTech           goflags.StringSlice
 	OutputMatchRegex          string
 	Retries                   int
 	Threads                   int
@@ -327,7 +327,7 @@ func ParseOptions() *Options {
 		flagSet.StringSliceVarP(&options.OutputMatchFavicon, "match-favicon", "mfc", nil, "match response with specified favicon hash (-mfc 1494302000)", goflags.NormalizedStringSliceOptions),
 		flagSet.StringVarP(&options.OutputMatchString, "match-string", "ms", "", "match response with specified string (-ms admin)"),
 		flagSet.StringVarP(&options.OutputMatchRegex, "match-regex", "mr", "", "match response with specified regex (-mr admin)"),
-		flagSet.StringVarP(&options.OutputMatchTech, "match-tech", "mt", "", "match response with specified tech (-mt wordpress)"),
+		flagSet.StringSliceVarP(&options.OutputMatchTech, "match-tech", "mt", nil, "save url with match specified tech (-mt wordpress,laravel,joomla)", goflags.CommaSeparatedStringSliceOptions),
 		flagSet.StringSliceVarP(&options.OutputMatchCdn, "match-cdn", "mcdn", nil, fmt.Sprintf("match host with specified cdn provider (%s)", cdncheck.DefaultCDNProviders), goflags.NormalizedStringSliceOptions),
 		flagSet.StringVarP(&options.OutputMatchResponseTime, "match-response-time", "mrt", "", "match response with specified response time in seconds (-mrt '< 1')"),
 		flagSet.StringVarP(&options.OutputMatchCondition, "match-condition", "mdc", "", "match response with dsl expression condition"),
@@ -489,11 +489,6 @@ func ParseOptions() *Options {
 		os.Exit(0)
 	}
 	showBanner()
-
-	if options.Version {
-		gologger.Info().Msgf("Current Version: %s\n", version)
-		os.Exit(0)
-	}
 
 	if err := options.ValidateOptions(); err != nil {
 		gologger.Fatal().Msgf("%s\n", err)
