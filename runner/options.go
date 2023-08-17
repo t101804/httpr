@@ -373,7 +373,6 @@ func ParseOptions() *Options {
 	)
 
 	flagSet.CreateGroup("update", "Update",
-		flagSet.CallbackVarP(GetUpdateCallback(), "update", "up", "update httpx to latest version"),
 		flagSet.BoolVarP(&options.DisableUpdateCheck, "disable-update-check", "duc", false, "disable automatic httpx update check"),
 	)
 
