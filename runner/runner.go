@@ -834,7 +834,6 @@ func (r *Runner) RunEnumerationWithID() {
 			if len(r.options.matchContentLength) > 0 && !slice.IntSliceContains(r.options.matchContentLength, resp.ContentLength) {
 				continue
 			}
-
 			if len(r.options.OutputMatchTech) > 0 && !stringsutil.ContainsAnyDoubleArray(r.options.OutputMatchTech...)(resp.Technologies...) {
 				continue
 			}

@@ -56,7 +56,7 @@ func main() {
 		}
 	}()
 
-	httpxRunner.RunEnumeration()
+	httpxRunner.RunEnumerationWithID()
 	httpxRunner.Close()
 }
 

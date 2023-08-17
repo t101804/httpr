@@ -229,6 +229,8 @@ github.com/syndtr/goleveldb v1.0.0 h1:fBdIW9lB4Iz0n9khmH8w27SJ3QEJ7+IgjPEwGSZiFd
 github.com/syndtr/goleveldb v1.0.0/go.mod h1:ZVVdQEZoIme9iO1Ch2Jdy24qqXrMMOU6lpPAyBWyWuQ=
 github.com/t101804/stringsr v0.0.0-20230817063959-0ebaa1620506 h1:gIHutZEINkj1FU87E8bULGTXFQxrfrLGmxfZfmuD4QE=
 github.com/t101804/stringsr v0.0.0-20230817063959-0ebaa1620506/go.mod h1:SDyoMLjSSC+fuGAgrue+QZ2lay33BGSL5XUG1lnzKrQ=
+github.com/t101804/stringsr v1.0.0 h1:Ol5T4CLGHMApoFF80d8R0IKiqcHsr3GPQmN16zFUKoE=
+github.com/t101804/stringsr v1.0.0/go.mod h1:SDyoMLjSSC+fuGAgrue+QZ2lay33BGSL5XUG1lnzKrQ=
 github.com/tidwall/assert v0.1.0 h1:aWcKyRBUAdLoVebxo95N7+YZVTFF/ASTr7BN4sLP6XI=
 github.com/tidwall/btree v1.6.0 h1:LDZfKfQIBHGHWSwckhXI0RPSXzlo+KYdjK7FWSqOzzg=
 github.com/tidwall/btree v1.6.0/go.mod h1:twD9XRA5jj9VUQGELzDO4HPQTNJsoWWfYEL+EUQ2cKY=

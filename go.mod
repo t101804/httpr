@@ -50,7 +50,7 @@ require (
 	github.com/projectdiscovery/tlsx v1.1.1
 	github.com/projectdiscovery/utils v0.0.44
 	github.com/stretchr/testify v1.8.4
-	github.com/t101804/stringsr v0.0.0-20230817063959-0ebaa1620506
+	github.com/t101804/stringsr v1.0.0
 	github.com/zmap/zcrypto v0.0.0-20230205235340-d51ce4775101
 	go.uber.org/multierr v1.11.0
 	golang.org/x/exp v0.0.0-20230420155640-133eef4313cb
