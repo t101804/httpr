@@ -29,6 +29,7 @@ import (
 	dsl "github.com/projectdiscovery/dsl"
 	"github.com/projectdiscovery/fastdialer/fastdialer"
 	"github.com/projectdiscovery/mapcidr/asn"
+	"github.com/projectdiscovery/stringsutil"
 	errorutil "github.com/projectdiscovery/utils/errors"
 	osutil "github.com/projectdiscovery/utils/os"
 	"github.com/t101804/httpr/common/customextract"
@@ -44,7 +45,6 @@ import (
 	"github.com/projectdiscovery/goconfig"
 	"github.com/projectdiscovery/retryablehttp-go"
 	sliceutil "github.com/projectdiscovery/utils/slice"
-	stringsutil "github.com/projectdiscovery/utils/strings"
 	urlutil "github.com/projectdiscovery/utils/url"
 	"github.com/t101804/httpr/common/hashes"
 
@@ -832,7 +832,7 @@ func (r *Runner) RunEnumerationWithID() {
 			if len(r.options.matchContentLength) > 0 && !slice.IntSliceContains(r.options.matchContentLength, resp.ContentLength) {
 				continue
 			}
-			if r.options.OutputMatchTech != "" && !stringsutil.EqualFoldAny(r.options.OutputMatchTech, resp.Technologies...) {
+			if r.options.OutputMatchTech != "" && !stringsutil.ContainsAny(r.options.OutputMatchTech, resp.Technologies...) {
 				continue
 			}
 

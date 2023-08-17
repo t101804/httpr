@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	stringsutil "github.com/projectdiscovery/utils/strings"
+	"github.com/projectdiscovery/stringsutil"
 	urlutil "github.com/projectdiscovery/utils/url"
 	"github.com/spaolacci/murmur3"
 )

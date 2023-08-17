@@ -7,7 +7,7 @@ import (
 	"regexp"
 	"strings"
 
-	stringsutil "github.com/projectdiscovery/utils/strings"
+	"github.com/projectdiscovery/stringsutil"
 	"golang.org/x/net/html"
 )
 

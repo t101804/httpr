@@ -18,7 +18,6 @@ import (
 	"github.com/projectdiscovery/gologger/formatter"
 	"github.com/projectdiscovery/gologger/levels"
 	fileutil "github.com/projectdiscovery/utils/file"
-	updateutils "github.com/projectdiscovery/utils/update"
 	"github.com/t101804/httpr/common/customextract"
 	"github.com/t101804/httpr/common/customheader"
 	"github.com/t101804/httpr/common/customlist"
@@ -494,17 +493,6 @@ func ParseOptions() *Options {
 	if options.Version {
 		gologger.Info().Msgf("Current Version: %s\n", version)
 		os.Exit(0)
-	}
-
-	if !options.DisableUpdateCheck {
-		latestVersion, err := updateutils.GetToolVersionCallback("httpx", version)()
-		if err != nil {
-			if options.Verbose {
-				gologger.Error().Msgf("httpx version check failed: %v", err.Error())
-			}
-		} else {
-			gologger.Info().Msgf("Current httpx version %v %v", version, updateutils.GetVersionDescription(version, latestVersion))
-		}
 	}
 
 	if err := options.ValidateOptions(); err != nil {

@@ -3,7 +3,7 @@ package customheader
 import (
 	"strings"
 
-	stringsutil "github.com/projectdiscovery/utils/strings"
+	"github.com/projectdiscovery/stringsutil"
 )
 
 // CustomHeaders valid for all requests
