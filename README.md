@@ -129,6 +129,7 @@ MATCHERS:
    -mcdn, -match-cdn string[]         match host with specified cdn provider (incapsula, oracle, google, azure, cloudflare, cloudfront, fastly, akamai, sucuri, leaseweb)
    -mrt, -match-response-time string  match response with specified response time in seconds (-mrt '< 1')
    -mdc, -match-condition string      match response with dsl expression condition
+   -mt, -match-tech string[]  match tech  with specified technology (wordpress,laravel)
 
 EXTRACTOR:
    -er, -extract-regex string[]   display response content with matched regex

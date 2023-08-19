@@ -1038,8 +1038,6 @@ func (r *Runner) RunEnumerationWithID() {
 
 				r.process(k, &wg, r.hp, protocol, scanopts, output)
 
-				// add code if output is there error will not continuing loop
-
 			}
 		} else {
 			r.process(k, &wg, r.hp, protocol, &r.scanopts, output)
@@ -1609,6 +1607,9 @@ func (r *Runner) process(t string, wg *sizedwaitgroup.SizedWaitGroup, hp *httpx.
 						defer wg.Done()
 
 						result := r.analyze(hp, protocol, target, method, t, scanopts)
+						// if result.Err != nil {
+						// 	return
+						// }
 						output <- result
 						if scanopts.TLSProbe && result.TLSData != nil {
 							scanopts.TLSProbe = false
